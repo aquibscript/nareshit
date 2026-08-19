@@ -11,7 +11,5 @@ public class Introduction {
         int x = 15;
         System.out.println(x);
 
-        Introduction obj = new Introduction(10);
-        System.out.println(obj.a);
     }
 }
