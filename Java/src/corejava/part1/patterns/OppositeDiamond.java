@@ -9,6 +9,11 @@ public class OppositeDiamond {
 
         int n = sc.nextInt();
 
+        if(n % 2 == 0) {
+            System.out.println("Enter an odd number only");
+            return;
+        }
+
         int space = 0;
         int star = n;
 
