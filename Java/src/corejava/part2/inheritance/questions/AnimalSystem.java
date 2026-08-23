@@ -1,8 +1,8 @@
-package corejava.part2.inheritance;
+package corejava.part2.inheritance.questions;
 
 import java.util.Scanner;
 
-public class SingleLevel {
+public class AnimalSystem {
 
     static void main(String[] args) {
 
