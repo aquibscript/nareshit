@@ -1,25 +1,22 @@
 public class Test {
 
     static void main(String[] args) {
-        /*
-         *
-         * *
-         * * *
-         * *
-         *
-         */
+        System.out.println(new B().sum);
+    }
+}
 
-        int next = 0;
+class A {
+    public int sum;
 
-        for (int i = 1; i <= 9; i++) {
-            if(i > 5) {
-                next++;
-            }
-            for (int j = 1; j < i - next; j++) {
-                System.out.print("* ");
-            }
+    static {
+        System.out.println("A Loaded");
+    }
+}
 
-            System.out.println();
-        }
+class B extends A {
+    public int sum;
+
+    static {
+        System.out.println("B Loaded");
     }
 }
