@@ -1,12 +1,13 @@
 public class Test {
 
     static void main(String[] args) {
-        System.out.println(new B().sum);
+
+        System.out.println(B.k);
     }
 }
 
 class A {
-    public int sum;
+    public static int k=10;
 
     static {
         System.out.println("A Loaded");
@@ -14,7 +15,7 @@ class A {
 }
 
 class B extends A {
-    public int sum;
+    public static int k=20;
 
     static {
         System.out.println("B Loaded");

@@ -10,11 +10,11 @@ public class ProductSystem {
     }
 }
 
-class  Product {
+class Product {
 
-    public  String name;
-    public  double price;
-    public  int quantity;
+    public String name;
+    public double price;
+    public int quantity;
 
     public Product(String name, double price, int quantity) {
         this.name = name;
@@ -22,7 +22,7 @@ class  Product {
         this.quantity = quantity;
     }
 
-    public  void displayDetails () {
+    public void displayDetails() {
         System.out.println("Product Details : ");
         System.out.println("Name : " + this.name);
         System.out.println("Price : " + this.price);
@@ -35,8 +35,8 @@ class  Product {
 }
 
 
-class  DiscountProduct extends  Product {
-    public  double discount;
+class DiscountProduct extends Product {
+    public double discount;
 
     public DiscountProduct(String name, double price, int quantity, double discount) {
         super(name, price, quantity);
