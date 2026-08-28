@@ -2,7 +2,7 @@ public class Test {
 
     static void main(String[] args) {
 
-        System.out.println(B.k);
+        System.out.println(new B().sum(1, 2));
     }
 }
 
@@ -12,6 +12,10 @@ class A {
     static {
         System.out.println("A Loaded");
     }
+
+    int sum (int a, int b) {
+        return a + b;
+    }
 }
 
 class B extends A {
@@ -20,4 +24,8 @@ class B extends A {
     static {
         System.out.println("B Loaded");
     }
+
+//    String sum (int a, int b) {
+//        return "hi";
+//    }
 }

@@ -2,30 +2,28 @@ package leetcode.august;
 
 public class SearchinRotatedI {
 
-    static  int findPivot (int [] nums) {
-        int left = 0;
-        int right = nums.length - 1;
+    static int findPivotIndex(int[] nums) {
 
-        while (left <= right) {
-            int mid = (left + right) / 2;
+        int start = 0;
+        int end = nums.length - 1;
+        int result = -1;
+        while (start <= end) {
 
-            if(nums[mid] > nums[mid - 1] && nums[mid] > nums[mid + 1]) {
-                return mid;
-            }
-            else if(nums[mid] > nums[mid - 1]) {
-                left = mid + 1;
+            int mid = (start + end) / 2;
+
+            if (nums[mid] <= nums[end]) {
+                result = mid;
+                start = mid + 1;
             } else {
-                right = mid;
+                end = mid - 1;
             }
 
         }
 
-        return -1;
+        return result;
     }
 
-
-    public static int binarySearch(int[] nums, int target, int left, int right) {
-
+    static int binarySearch(int[] nums, int target, int left, int right) {
 
         while (left <= right) {
             int mid = (left + right) / 2;
@@ -45,22 +43,29 @@ public class SearchinRotatedI {
         return -1;
     }
 
+
     public int search(int[] nums, int target) {
 
 
-        int pivot = findPivot(nums);
+        int pivot = findPivotIndex(nums);
 
-        int res =   binarySearch(nums, target, 0, pivot);
-        if(res == -1) {
-            res = binarySearch(nums, target, pivot, nums.length - 1);
+        System.out.println("PIVOT : " + pivot);
+
+        if (pivot < 0) {
+            return -1;
         }
 
-        return  res;
+        if (target >= nums[0]) {
+            return binarySearch(nums, target, 0, pivot);
+        }
+
+        return binarySearch(nums, target, pivot, nums.length - 1);
 
     }
 
 
     static void main(String[] args) {
-        System.out.println(new SearchinRotatedI().search(new int [] {4,5,6,7,0,1,2}, 0));
+        System.out.println(new SearchinRotatedI().search(
+                new int[]{2,0,1}, 0));
     }
 }
