@@ -3,6 +3,17 @@ public class Test {
     static void main(String[] args) {
 
         System.out.println(new B().sum(1, 2));
+
+        User user = new User("sam");
+        // new  => xoxo
+        // constructor => parameter(name)
+        // xoxo.name
+        // (name) = {
+        // this.name = name
+
+
+
+
     }
 }
 
@@ -28,4 +39,14 @@ class B extends A {
 //    String sum (int a, int b) {
 //        return "hi";
 //    }
+}
+
+class User {
+
+    String name;
+    String email;
+
+    User(String name) {
+        name = name;
+    }
 }
