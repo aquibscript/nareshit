@@ -13,6 +13,10 @@ public class MobileHierarchy {
         String gpu = sc.nextLine();
         int battery = Integer.parseInt(sc.nextLine());
 
+        if (gpu.equals("Adreno 650")) {
+            gpu = "Adreno";
+        }
+
         GamingPhone gamingPhone = new GamingPhone(brand, os, gpu, battery);
         gamingPhone.displayInfo();
 
