@@ -12,19 +12,19 @@ public class ProductStore {
 
         String name = sc.nextLine();
         double price = Double.parseDouble(sc.nextLine());
-        if(price < 0) {
+        if (price < 0) {
             System.out.println("Error Invalid Input.");
             return;
         }
         String category = sc.nextLine();
 
-        if(choice == 1) {
+        if (choice == 1) {
             String licenseKey = sc.nextLine();
             int discount = Integer.parseInt(sc.nextLine());
             DigitalProduct digitalProduct = new DigitalProduct(name, price, category, licenseKey);
             digitalProduct.displayDetails(discount);
 
-        } else if(choice == 2) {
+        } else if (choice == 2) {
             double shippingWeight = Double.parseDouble(sc.nextLine());
             int discount = Integer.parseInt(sc.nextLine());
 
@@ -151,7 +151,7 @@ class PhysicalProduct extends Product {
 
     public void displayDetails(double discount) {
         super.displayDetails();
-        System.out.println("SShipping Weight : " + this.getShippingWeight() + " KG");
+        System.out.println("Shipping Weight : " + this.getShippingWeight() + " KG");
         System.out.println("Discount : " + this.applyDiscount(discount));
         System.out.println("New Price : " + (this.getPrice() - this.applyDiscount(discount)));
         System.out.println("Tax : " + this.calculateTax());
